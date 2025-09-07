@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura of Intelligence | AI for Dementia Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glow-color: #00aaff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            background-color: #0a0a0a;
+            background-image:
+                radial-gradient(at 27% 37%, hsla(215, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 97% 21%, hsla(125, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 82% 99%, hsla(340, 98%, 45%, 0.1) 0px, transparent 50%);
+        }
+        .card {
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            --glow-opacity: 0;
+        }
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem; /* match card border-radius */
+            border: 1px solid transparent;
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 170, 255, 0.4), transparent 40%);
+            opacity: var(--glow-opacity);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --glow-opacity: 1;
+        }
+        .neon-text {
+            text-shadow:
+                0 0 5px var(--glow-color),
+                0 0 10px var(--glow-color),
+                0 0 20px var(--glow-color);
+        }
+        .icon-glow {
+             filter: drop-shadow(0 0 8px var(--glow-color));
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed w-full z-30 bg-black/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Site branding -->
+                <div class="shrink-0 mr-4">
+                    <a href="#" class="flex items-center">
+                        <svg class="w-8 h-8 fill-current text-white icon-glow" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="--glow-color: #00aaff;">
+                            <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm0 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" />
+                            <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 4c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4z" />
+                        </svg>
+                        <span class="ml-3 text-2xl font-bold neon-text" style="--glow-color: #00aaff;">Aura of Intelligence</span>
+                    </a>
+                </div>
+
+                <!-- Desktop navigation -->
+                <nav class="hidden md:flex md:grow">
+                    <ul class="flex grow justify-end flex-wrap items-center">
+                        <li><a href="#" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Home</a></li>
+                        <li><a href="#features" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">How It Works</a></li>
+                        <li><a href="#benefits" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Benefits</a></li>
+                        <li><a href="https://github.com/auraofintelligence/aura-dementia/" target="_blank" class="btn text-white bg-blue-600 hover:bg-blue-700 ml-3 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                            GitHub
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="grow">
+        <!-- Hero Section -->
+        <section class="relative hero-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="pt-32 pb-20 md:pt-40 md:pb-28">
+                    <div class="text-center">
+                        <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-6" data-aos="zoom-y-out">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">Lighting the Way</span>
+                            <br/>
+                            <span class="text-white">Through Memory's Journey</span>
+                        </h1>
+                        <div class="max-w-3xl mx-auto">
+                            <p class="text-xl text-gray-400 mb-8" data-aos="zoom-y-out" data-aos-delay="150">
+                                Aura of Intelligence is a compassionate digital companion for individuals with dementia. We use advanced AI to create a personalized "digital twin" that preserves identity, supports daily life, and strengthens the bonds between loved ones and caregivers.
+                            </p>
+                            <div class="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">
+                                <a href="#features" class="w-full sm:w-auto mb-4 sm:mb-0 sm:mr-4 px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                                    Discover More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / How it Works -->
+        <section id="features" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold neon-text" style="--glow-color: #00aaff;">The Core of the Aura</h2>
+                    <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Our system is built on a foundation of deep, person-centered AI to create a truly holistic digital reflection of an individual.</p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-start" id="card-grid-1">
+                    <!-- Card 1: Persona Mapping -->
+                    <div class="card p-8 rounded-xl shadow-2xl flex flex-col items-center text-center h-full">
+                        <div class="mb-4">
+                            <svg class="w-16 h-16 text-blue-400 icon-glow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Persona Mapping</h3>
+                        <p class="text-gray-400">
+                            We build a rich, digital memoir by collecting life stories, values, and preferences through guided conversations. This process captures the essence of the individual, ensuring the AI's support is always grounded in their unique history.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Behavior Modeling -->
+                    <div class="card p-8 rounded-xl shadow-2xl flex flex-col items-center text-center h-full">
+                        <div class="mb-4">
+                           <svg class="w-16 h-16 text-blue-400 icon-glow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                           </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Behavior Modeling</h3>
+                        <p class="text-gray-400">
+                            The system learns daily routines and recognizes behavioral patterns. This allows it to identify potential triggers for distress and proactively suggest calming interventions, such as playing a favorite song or showing a cherished family photo.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 3: Social Connection -->
+                    <div class="card p-8 rounded-xl shadow-2xl flex flex-col items-center text-center h-full">
+                        <div class="mb-4">
+                            <svg class="w-16 h-16 text-blue-400 icon-glow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m-7.5-2.952a4.5 4.5 0 0 1 6.364 0M12 12a4.5 4.5 0 0 1 6.364 0m-6.364 0a4.5 4.5 0 0 0-6.364 0m12.728 0a9.094 9.094 0 0 1-3.741-.479 3 3 0 0 1 4.682-2.72M3.055 18.72a9.094 9.094 0 0 1-3.741-.479 3 3 0 0 1 4.682-2.72m7.5-2.952a4.5 4.5 0 0 0-6.364 0" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2 text-white">Social Connection</h3>
+                        <p class="text-gray-400">
+                           Aura visualizes the individual's "Circles of Support," facilitating moment sharing and communication. Family and friends can contribute memories, creating a collaborative tapestry that strengthens bonds and combats isolation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="py-20 bg-black/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold neon-text" style="--glow-color: #00d4ff;">A Supportive Ecosystem for Everyone</h2>
+                    <p class="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">Our goal is to enhance the quality of life for not just the individual, but for their entire network of care.</p>
+                </div>
+                <div class="grid gap-8 md:grid-cols-3" id="card-grid-2">
+                    <!-- Benefit 1 -->
+                    <div class="card p-8 rounded-xl shadow-2xl text-center">
+                        <h3 class="text-xl font-bold mb-2 text-white">For Individuals with Dementia</h3>
+                        <ul class="text-gray-400 space-y-2 text-left">
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Memory Support to recall cherished experiences.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Simplified Decision Making to reduce overwhelm.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Personal Engagement with tailored, meaningful activities.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Preservation of self-identity and dignity.</span></li>
+                        </ul>
+                    </div>
+                     <!-- Benefit 2 -->
+                    <div class="card p-8 rounded-xl shadow-2xl text-center">
+                        <h3 class="text-xl font-bold mb-2 text-white">For Families & Friends</h3>
+                        <ul class="text-gray-400 space-y-2 text-left">
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Peace of Mind with safety features and alerts.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Shared Experiences through a collaborative digital memoir.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Deeper Understanding of their loved one's world.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>A new way to connect and create positive moments.</span></li>
+                        </ul>
+                    </div>
+                     <!-- Benefit 3 -->
+                    <div class="card p-8 rounded-xl shadow-2xl text-center">
+                        <h3 class="text-xl font-bold mb-2 text-white">For Professional Caregivers</h3>
+                         <ul class="text-gray-400 space-y-2 text-left">
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Efficient & Personalized Care with instant access to profiles.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Enhanced Communication between caregiver, individual, and family.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Continuous Learning as the system adapts to changing needs.</span></li>
+                           <li class="flex items-start"><span class="text-blue-400 mr-2">✓</span><span>Tools for proactive BPSD management and de-escalation.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision -->
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+                 <h2 class="text-4xl font-extrabold neon-text mb-6" style="--glow-color: #00aaff;">Our Future Vision: The Clinical Path Forward</h2>
+                 <p class="text-xl text-gray-400 mb-8">
+                     We are committed to a rigorous, evidence-based path to bring Aura of Intelligence into the Australian healthcare system. Our roadmap includes phased clinical trials in Queensland, aiming for TGA approval and integration with My Aged Care and NDIS as a recognized Assistive Technology.
+                 </p>
+                 <a href="https://github.com/auraofintelligence/aura-dementia/" target="_blank" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-transparent border-2 border-blue-500 rounded-lg hover:bg-blue-500 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105">
+                     Follow Our Development
+                 </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+             <p class="text-gray-400">&copy; 2025 Aura of Intelligence. A new paradigm for compassionate dementia care.</p>
+             <p class="text-gray-500 mt-2">Join us on our journey to redefine what's possible.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Script for interactive card glow effect
+        const setupCardGlow = (gridId) => {
+            const grid = document.getElementById(gridId);
+            if (!grid) return;
+            
+            const cards = grid.querySelectorAll('.card');
+
+            grid.addEventListener('mousemove', e => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        };
+        
+        // Initialize for all card grids
+        setupCardGlow('card-grid-1');
+        setupCardGlow('card-grid-2');
+    </script>
+</body>
+</html>
