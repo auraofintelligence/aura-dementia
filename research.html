@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Path | Aura of Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glow-color: #00aaff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            background-color: #0a0a0a;
+            background-image:
+                radial-gradient(at 27% 37%, hsla(215, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 97% 21%, hsla(125, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 82% 99%, hsla(340, 98%, 45%, 0.1) 0px, transparent 50%);
+        }
+        .card {
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            --glow-opacity: 0;
+        }
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem; /* match card border-radius */
+            border: 1px solid transparent;
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 170, 255, 0.4), transparent 40%);
+            opacity: var(--glow-opacity);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --glow-opacity: 1;
+        }
+        .neon-text {
+            text-shadow:
+                0 0 5px var(--glow-color),
+                0 0 10px var(--glow-color),
+                0 0 20px var(--glow-color);
+        }
+        .icon-glow {
+             filter: drop-shadow(0 0 8px var(--glow-color));
+        }
+        
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+        .timeline-marker {
+            position: absolute;
+            left: -0.7rem;
+            top: 0.1rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background-color: #0a0a0a;
+            border: 2px solid var(--glow-color);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed w-full z-30 bg-black/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Site branding -->
+                <div class="shrink-0 mr-4">
+                    <a href="index.html" class="flex items-center">
+                        <svg class="w-8 h-8 fill-current text-white icon-glow" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="--glow-color: #00aaff;">
+                            <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm0 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" />
+                            <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 4c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4z" />
+                        </svg>
+                        <span class="ml-3 text-2xl font-bold neon-text" style="--glow-color: #00aaff;">Aura of Intelligence</span>
+                    </a>
+                </div>
+
+                <!-- Desktop navigation -->
+                <nav class="hidden md:flex md:grow">
+                    <ul class="flex grow justify-end flex-wrap items-center">
+                        <li><a href="index.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Home</a></li>
+                        <li><a href="technology.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">The Technology</a></li>
+                        <li><a href="#" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">For Families</a></li>
+                        <li><a href="research.html" class="font-bold text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Research Path</a></li>
+                        <li><a href="vision.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Our Vision</a></li>
+                        <li><a href="#" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Get Involved</a></li>
+                        <li><a href="https://github.com/auraofintelligence/aura-dementia/" target="_blank" class="btn text-white bg-blue-600 hover:bg-blue-700 ml-3 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                            GitHub
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="grow">
+        <!-- Page Hero Section -->
+        <section class="relative hero-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="pt-32 pb-16 md:pt-40 md:pb-24">
+                    <div class="text-center">
+                        <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-6">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-green-300">An Evidence-Based</span>
+                            <br/>
+                            <span class="text-white">Path to Clinical Integration</span>
+                        </h1>
+                        <div class="max-w-3xl mx-auto">
+                            <p class="text-xl text-gray-400 mb-8">
+                                Innovation requires rigor. We are committed to a transparent and robust clinical research pathway to validate the efficacy of Aura of Intelligence and ensure its safe, effective integration into the Australian healthcare system.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinical Trial Timeline Section -->
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold neon-text" style="--glow-color: #00aaff;">Phased Clinical Trial Protocol</h2>
+                    <p class="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">Our research is structured in three distinct phases, designed to systematically build evidence from usability and feasibility to definitive clinical effectiveness.</p>
+                </div>
+                
+                <div>
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="text-2xl font-bold text-white mb-2">Phase 1: Feasibility & Usability</h3>
+                            <p class="text-gray-500 font-semibold mb-3">Objective: Refine the prototype and confirm user acceptability.</p>
+                            <p class="text-gray-400">
+                                In this initial phase, we work with a small cohort of individuals with mild dementia and their carers. Through qualitative interviews and usability testing, we ensure the Aura system is intuitive, engaging, and genuinely helpful before wider deployment. This crucial step provides the human factors evidence required for regulatory submission.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                     <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="text-2xl font-bold text-white mb-2">Phase 2: Single-Site Pilot Study</h3>
+                            <p class="text-gray-500 font-semibold mb-3">Objective: Gather preliminary efficacy data and test trial procedures.</p>
+                            <p class="text-gray-400">
+                                A controlled pilot study will provide the first quantitative data on clinical outcomes. We will measure the impact of Aura on key metrics such as the reduction of BPSD, caregiver burden, and quality of life using validated clinical scales. The results will power the design of our large-scale efficacy trial.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                     <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="card p-6 rounded-lg">
+                            <h3 class="text-2xl font-bold text-white mb-2">Phase 3: Multi-Site Efficacy Trial (RCT)</h3>
+                            <p class="text-gray-500 font-semibold mb-3">Objective: Definitively prove effectiveness and cost-effectiveness.</p>
+                            <p class="text-gray-400">
+                               A large-scale, multi-site Randomised Controlled Trial (RCT) across diverse Queensland locations will provide the highest level (Level 1) of clinical evidence. This pivotal trial is designed to generate the definitive proof required for TGA approval, inclusion in government funding programs, and publication in high-impact medical journals.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regulatory & Pathway to Care Section -->
+        <section class="py-20 bg-black/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold neon-text" style="--glow-color: #00d4ff;">Regulatory Approval & Pathway to Care</h2>
+                    <p class="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">Our goal is to make Aura of Intelligence an accessible, government-supported tool within the Australian care ecosystem.</p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2" id="card-grid-research">
+                    <!-- Card 1: Regulatory -->
+                    <div class="card p-8 rounded-xl shadow-2xl h-full flex flex-col">
+                        <div class="flex items-center mb-4">
+                             <svg class="w-12 h-12 text-blue-400 icon-glow mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.007H12v-.007Z" /></svg>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Ethical & Regulatory Approval</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">
+                           We are navigating the comprehensive approval processes required in Australia. This includes submitting our clinical trial protocols to a Human Research Ethics Committee (HREC) for rigorous review, with a special focus on protecting vulnerable participants. Concurrently, we are preparing a full technical file for the Therapeutic Goods Administration (TGA) to classify Aura as a Software as a Medical Device (SaMD), ensuring it meets the highest standards for safety and performance.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Pathway to Care -->
+                    <div class="card p-8 rounded-xl shadow-2xl h-full flex flex-col">
+                         <div class="flex items-center mb-4">
+                           <svg class="w-12 h-12 text-blue-400 icon-glow mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 10.5 12 10.5s-1.536.71-2.121 1.256c-1.171.879-1.171 2.303 0 3.182Z" /></svg>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">NDIS & My Aged Care Integration</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">
+                            The evidence generated from our clinical trials is designed to position Aura as a fundable Assistive Technology (AT) under the National Disability Insurance Scheme (NDIS) for younger-onset dementia, and within My Aged Care programs like Home Care Packages. Our go-to-market strategy is a 'prescription' model, empowering clinicians and assessors with the evidence they need to justify funding for their clients, making Aura an integral part of modern, subsidized dementia care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+             <p class="text-gray-400">&copy; 2025 Aura of Intelligence. A new paradigm for compassionate dementia care.</p>
+             <p class="text-gray-500 mt-2">Join us on our journey to redefine what's possible.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Script for interactive card glow effect
+        const setupCardGlow = (gridId) => {
+            const grid = document.getElementById(gridId);
+            if (!grid) return;
+            
+            const cards = grid.querySelectorAll('.card');
+
+            grid.addEventListener('mousemove', e => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        };
+        
+        setupCardGlow('card-grid-research');
+    </script>
+</body>
+</html>
