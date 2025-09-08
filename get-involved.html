@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved | Aura of Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glow-color: #00aaff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            background-color: #0a0a0a;
+            background-image:
+                radial-gradient(at 27% 37%, hsla(215, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 97% 21%, hsla(125, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 82% 99%, hsla(340, 98%, 45%, 0.1) 0px, transparent 50%);
+        }
+        .card {
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            --glow-opacity: 0;
+        }
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem; /* match card border-radius */
+            border: 1px solid transparent;
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 170, 255, 0.4), transparent 40%);
+            opacity: var(--glow-opacity);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --glow-opacity: 1;
+        }
+        .neon-text {
+            text-shadow:
+                0 0 5px var(--glow-color),
+                0 0 10px var(--glow-color),
+                0 0 20px var(--glow-color);
+        }
+        .icon-glow {
+             filter: drop-shadow(0 0 8px var(--glow-color));
+        }
+        .form-input {
+            background-color: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--glow-color);
+            box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed w-full z-30 bg-black/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Site branding -->
+                <div class="shrink-0 mr-4">
+                    <a href="index.html" class="flex items-center">
+                        <svg class="w-8 h-8 fill-current text-white icon-glow" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="--glow-color: #00aaff;">
+                            <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm0 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" />
+                            <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 4c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4z" />
+                        </svg>
+                        <span class="ml-3 text-2xl font-bold neon-text" style="--glow-color: #00aaff;">Aura of Intelligence</span>
+                    </a>
+                </div>
+
+                <!-- Desktop navigation -->
+                <nav class="hidden md:flex md:grow">
+                    <ul class="flex grow justify-end flex-wrap items-center">
+                        <li><a href="index.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Home</a></li>
+                        <li><a href="technology.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">The Technology</a></li>
+                        <li><a href="families.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">For Families</a></li>
+                        <li><a href="research.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Research Path</a></li>
+                        <li><a href="vision.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Our Vision</a></li>
+                        <li><a href="involved.html" class="font-bold text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Get Involved</a></li>
+                        <li><a href="https://github.com/auraofintelligence/aura-dementia/" target="_blank" class="btn text-white bg-blue-600 hover:bg-blue-700 ml-3 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                            GitHub
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="grow">
+        <!-- Page Hero Section -->
+        <section class="relative hero-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="pt-32 pb-16 md:pt-40 md:pb-24">
+                    <div class="text-center">
+                        <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-6">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 to-yellow-400">Join a Project</span>
+                            <br/>
+                            <span class="text-white">With Purpose</span>
+                        </h1>
+                        <div class="max-w-3xl mx-auto">
+                            <p class="text-xl text-gray-400 mb-8">
+                                Aura of Intelligence is an open, collaborative endeavor. We believe the greatest challenges are solved together. Whether you code, care, research, or dream, there's a place for you here.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ways to Get Involved -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="grid gap-12 md:grid-cols-2" id="card-grid-involved">
+                    <!-- For Developers -->
+                    <div class="card p-8 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-4 text-white">For Developers</h3>
+                        <p class="text-gray-400 mb-6">
+                            Our project is open source. We're building a modern, sophisticated stack and tackling fascinating challenges in AI, mobile development, and data visualization. Fork our repo, submit a pull request, or join the discussion.
+                        </p>
+                        <a href="https://github.com/auraofintelligence/aura-dementia/" target="_blank" class="inline-flex items-center font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                            <span>Explore on GitHub</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- For Families -->
+                    <div class="card p-8 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-4 text-white">For Families & Early Adopters</h3>
+                        <p class="text-gray-400 mb-6">
+                           Your lived experience is the most critical ingredient in our design process. We are actively seeking individuals and families to participate in our Phase 1 Usability Trials. Help us shape a tool that truly meets your needs.
+                        </p>
+                         <a href="#contact" class="inline-flex items-center font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                            <span>Become an Early Adopter</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                    
+                     <!-- For Researchers -->
+                    <div class="card p-8 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-4 text-white">For Researchers & Clinicians</h3>
+                        <p class="text-gray-400 mb-6">
+                           We are building strategic partnerships with academic institutions and healthcare providers for our phased clinical trials. If you are interested in collaborating on this evidence-based research, we would love to connect.
+                        </p>
+                         <a href="#contact" class="inline-flex items-center font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                            <span>Discuss a Partnership</span>
+                           <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                    
+                     <!-- For Visionaries -->
+                    <div class="card p-8 rounded-xl shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-4 text-white">For Visionaries & Investors</h3>
+                        <p class="text-gray-400 mb-6">
+                           Our vision extends beyond dementia care to a new paradigm of human-computer interaction. If you are inspired by our long-term mission and interested in helping to fund the future of compassionate technology, let's start a conversation.
+                        </p>
+                         <a href="#contact" class="inline-flex items-center font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                            <span>Connect with Us</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-20 bg-black/30">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-extrabold neon-text" style="--glow-color: #00d4ff;">Let's Connect</h2>
+                    <p class="text-lg text-gray-400 mt-4">Have a question or want to discuss how you can be a part of this journey? Reach out to us.</p>
+                </div>
+                <form>
+                    <div class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full form-input rounded-md py-3 px-4 transition-all" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full form-input rounded-md py-3 px-4 transition-all" required>
+                        </div>
+                         <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300">I'm interested in...</label>
+                            <select id="subject" name="subject" class="mt-1 block w-full form-input rounded-md py-3 px-4 transition-all">
+                                <option>Becoming an Early Adopter</option>
+                                <option>Research Partnership</option>
+                                <option>Investing / Visionary Partnership</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full form-input rounded-md py-3 px-4 transition-all" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="w-full sm:w-auto px-8 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+             <p class="text-gray-400">&copy; 2025 Aura of Intelligence. A new paradigm for compassionate dementia care.</p>
+             <p class="text-gray-500 mt-2">Join us on our journey to redefine what's possible.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Script for interactive card glow effect
+        const setupCardGlow = (gridId) => {
+            const grid = document.getElementById(gridId);
+            if (!grid) return;
+            
+            const cards = grid.querySelectorAll('.card');
+
+            grid.addEventListener('mousemove', e => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        };
+        
+        setupCardGlow('card-grid-involved');
+    </script>
+</body>
+</html>
