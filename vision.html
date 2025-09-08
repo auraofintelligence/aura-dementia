@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vision | Aura of Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glow-color: #00aaff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+        }
+        .hero-bg {
+            background-color: #0a0a0a;
+            background-image:
+                radial-gradient(at 27% 37%, hsla(215, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 97% 21%, hsla(125, 98%, 45%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 82% 99%, hsla(340, 98%, 45%, 0.1) 0px, transparent 50%);
+        }
+        .card {
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            --glow-opacity: 0;
+        }
+        .card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.75rem; /* match card border-radius */
+            border: 1px solid transparent;
+            background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(0, 170, 255, 0.4), transparent 40%);
+            opacity: var(--glow-opacity);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            --glow-opacity: 1;
+        }
+        .neon-text {
+            text-shadow:
+                0 0 5px var(--glow-color),
+                0 0 10px var(--glow-color),
+                0 0 20px var(--glow-color);
+        }
+        .icon-glow {
+             filter: drop-shadow(0 0 8px var(--glow-color));
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed w-full z-30 bg-black/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-20">
+                <!-- Site branding -->
+                <div class="shrink-0 mr-4">
+                    <a href="index.html" class="flex items-center">
+                        <svg class="w-8 h-8 fill-current text-white icon-glow" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="--glow-color: #00aaff;">
+                            <path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0zm0 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4z" />
+                            <path d="M16 8c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm0 4c2.209 0 4 1.791 4 4s-1.791 4-4 4-4-1.791-4-4 1.791-4 4-4z" />
+                        </svg>
+                        <span class="ml-3 text-2xl font-bold neon-text" style="--glow-color: #00aaff;">Aura of Intelligence</span>
+                    </a>
+                </div>
+
+                <!-- Desktop navigation -->
+                <nav class="hidden md:flex md:grow">
+                    <ul class="flex grow justify-end flex-wrap items-center">
+                        <li><a href="index.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Home</a></li>
+                        <li><a href="technology.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">The Technology</a></li>
+                        <li><a href="#" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">For Families</a></li>
+                        <li><a href="research.html" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Research Path</a></li>
+                        <li><a href="vision.html" class="font-bold text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Our Vision</a></li>
+                        <li><a href="#" class="font-medium text-gray-300 hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">Get Involved</a></li>
+                        <li><a href="https://github.com/auraofintelligence/aura-dementia/" target="_blank" class="btn text-white bg-blue-600 hover:bg-blue-700 ml-3 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                            GitHub
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="grow">
+        <!-- Page Hero Section -->
+        <section class="relative hero-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="pt-32 pb-16 md:pt-40 md:pb-24">
+                    <div class="text-center">
+                        <h1 class="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-6">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">Beyond the Horizon</span>
+                            <br/>
+                            <span class="text-white">A Protopian Future</span>
+                        </h1>
+                        <div class="max-w-3xl mx-auto">
+                            <p class="text-xl text-gray-400 mb-8">
+                                Our work begins with dementia care, but our vision extends to a future where technology amplifies human potential, fosters collective intelligence, and helps build a more conscious, connected, and regenerative world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision 1: XR Memory Palaces -->
+        <section class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                         <h2 class="text-4xl font-extrabold neon-text mb-6" style="--glow-color: #00aaff;">XR Memory Palaces</h2>
+                         <p class="text-lg text-gray-400 mb-4">
+                            The digital twin is not just a database; it is the blueprint for a navigable, spatial environment. We envision transforming the semantic memory graph into an immersive Extended Reality (XR) experience—a "Memory Palace."
+                         </p>
+                         <p class="text-gray-400">
+                            Imagine literally walking through your life story. Revisit a recreated childhood home where photos on the wall come to life with narrated stories. Explore a mythic forest where each tree represents a major life achievement. In this virtual space, memory is not just recalled; it is relived, reinforcing neural pathways and creating profound emotional connections. This is the future of reminiscence therapy—a path towards digital immortality where future generations can have a conversation with their ancestors.
+                         </p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <!-- Placeholder for a compelling visual -->
+                        <div class="card rounded-xl p-4 shadow-2xl" id="card-grid-vision-1">
+                             <img src="https://placehold.co/600x400/0a0a0a/e0e0e0?text=XR+Memory+Palace" alt="Conceptual art of a virtual reality memory palace" class="rounded-lg w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision 2: Global Consciousness Network -->
+        <section class="py-20 bg-black/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl font-extrabold neon-text" style="--glow-color: #00d4ff;">A Global Consciousness Network</h2>
+                    <p class="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">The principles behind Aura—personal sovereignty, collective intelligence, and compassionate technology—form the blueprint for a global network of conscious communities, or "GAJRA Earth Encampments."</p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-3" id="card-grid-vision-2">
+                    <div class="card p-8 rounded-xl shadow-2xl text-center">
+                        <h3 class="text-xl font-bold mb-2 text-white">Queen Nodes</h3>
+                        <p class="text-gray-400">Local, intimate gatherings that act as pilot events and innovation hubs. Here, the core templates are adapted to diverse cultures, fostering grassroots growth and generating new ideas for the collective.</p>
+                    </div>
+                    <div class="card p-8 rounded-xl shadow-2xl text-center">
+                        <h3 class="text-xl font-bold mb-2 text-white">Consciousness Groves</h3>
+                        <p class="text-gray-400">Larger regional hubs that synthesize the learnings from local nodes. These become centers for more complex simulations, problem-solving games, and building regional eco-systems of conscious creators.</p>
+                    </div>
+                    <div class="card p-8 rounded-xl shadow-2xl text-center">
+                        <h3 class="text-xl font-bold mb-2 text-white">GAJRA Sanctuaries</h3>
+                        <p class="text-gray-400">The ultimate vision: a planetary latticework of permanent, self-sustaining sanctuaries operating year-round as community centers, training academies, and eco-villages for a new era.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+                 <h2 class="text-4xl font-extrabold neon-text mb-6" style="--glow-color: #00aaff;">Become a Civilization Catalyst</h2>
+                 <p class="text-xl text-gray-400 mb-8">
+                     This is more than a project; it's a movement. It's about building the tools, systems, and communities for a future of joyful, responsible abundance. Whether you are a developer, a caregiver, an artist, or a visionary, you have a role to play.
+                 </p>
+                 <a href="#" class="inline-block px-8 py-3 text-lg font-semibold text-white bg-transparent border-2 border-pink-500 rounded-lg hover:bg-pink-500 hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105">
+                     Join the Movement
+                 </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+             <p class="text-gray-400">&copy; 2025 Aura of Intelligence. A new paradigm for compassionate dementia care.</p>
+             <p class="text-gray-500 mt-2">Join us on our journey to redefine what's possible.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Script for interactive card glow effect
+        const setupCardGlow = (gridId) => {
+            const grid = document.getElementById(gridId);
+            if (!grid) return;
+            
+            const cards = grid.querySelectorAll('.card');
+
+            // The element to attach the listener to is either the grid itself, or the single card if the ID is on the card.
+            const addListenerToElement = grid;
+
+            addListenerToElement.addEventListener('mousemove', e => {
+                // The cards to apply the effect to are either the single card itself or all cards in the grid.
+                const targetCards = grid.id === 'card-grid-vision-1' ? [grid] : Array.from(cards);
+
+                targetCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        };
+        
+        setupCardGlow('card-grid-vision-1');
+        setupCardGlow('card-grid-vision-2');
+
+    </script>
+</body>
+</html>
+
